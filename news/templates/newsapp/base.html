@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}News{% endblock %}</title>
+    <!-- Подключение Bootstrap (может потребоваться изменение ссылок в зависимости от версии Bootstrap) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/home">Главная</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li><a class="nav-link" href="{% url 'news_by_category' 'economics' %}">Экономика</a></li>
+                <li><a class="nav-link" href="{% url 'news_by_category' 'travel' %}">Путешествия</a></li>
+                <li><a class="nav-link" href="{% url 'news_by_category' 'world' %}">Мир</a></li>
+                <li><a class="nav-link" href="{% url 'news_by_category' 'russia' %}">Россия</a></li>
+                <li><a class="nav-link" href="{% url 'news_by_category' 'tech' %}">Наука и техника</a></li>
+                <li><a class="nav-link" href="{% url 'news_by_category' 'sport' %}">Спорт</a></li>
+            </ul>
+        </div>
+    </nav>
+<hr>
+
+    <!-- Основной контент -->
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Подключение необходимых скриптов Bootstrap (может потребоваться изменение ссылок в зависимости от версии Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
