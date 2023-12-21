@@ -63,3 +63,6 @@ def news_by_category(request, category):
     except EmptyPage:
         news = paginator.page(paginator.num_pages)
     return render(request, 'newsapp/category.html', {'news': news, 'category': category})
+
+def register(request):
+    return render(request, 'newsapp/register.html')
